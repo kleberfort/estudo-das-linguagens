@@ -28,3 +28,18 @@ nav a:hover{
     background-color: #575757;
  
 }
+
+.codigo_background {
+    background-color: #aaa4a4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+}
+
+.codigo_cor_letra {
+            color: #2c3e50;
+               }
+
+               .titulo-site {
+                text-align: center;
+               }

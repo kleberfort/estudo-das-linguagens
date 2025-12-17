@@ -3,9 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
     <title>Estudo Sobre a Linguagem Java</title>
 </head>
 <body>
+
+    <h1 class="titulo-site">Estudo Sobre a Linguagem Java</h1>
+
+    <p>Linguagem java é uma linguagem de programação orientada a objetos, amplamente utilizada em aplicações empresariais e desenvolvimento web.</p>
+
+    <h2>O que é esse Paradigma Orientada a objetos?</h2>
+    <p>O paradigma de programação orientada a objetos (POO) é um modelo de programação que utiliza "objetos" para representar dados e métodos. Em POO, os objetos são instâncias de classes, que definem as propriedades e comportamentos dos objetos. Os principais conceitos da POO incluem encapsulamento, herança, polimorfismo e abstração.</p>
+    <p>O paradigma representa muito bem o domínio do problema, pois permite modelar entidades reais do mundo como objetos, facilitando a manutenção e expansão do código.</p>
     
+
+    <h2>O que é abstração? </h2>
+    <p>Abstração é o processo de ocultar detalhes complexos e mostrar apenas informações essenciais ao usuário. Em programação orientada a objetos, a abstração permite criar classes e métodos que representam conceitos do mundo real de forma simplificada, tornando o código mais legível e reutilizável.</p>
+
+
+    <h3>Criação de uma classe Conta, que representa um Domínio de uma Conta bancária.</h3>
+
+<div class="codigo_background">
+<pre>
+    <code class="codigo_cor_letra">
+public class Conta {
+
+    private String titular;
+    private double saldo;
+    private int numero;
+
+    public Conta(String titular, int numero) {
+        this.titular = titular;
+        this.numero = numero;
+        this.saldo = 0.0;
+    }
+
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+        }
+    }
+
+    public void sacar(double valor) {
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+        }
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+}
+
+    </code>
+    </pre> 
+    </div>
+
+    <h3>Os atributos:</h3>
+    <p>Os atributos são as propriedades ou características do objeto. Na classe Conta, os atributos são:</p>
+    <ul>
+        <li><strong>titular:</strong> representa o nome do titular da conta.</li>
+        <li><strong>saldo:</strong> representa o saldo atual da conta.</li>
+        <li><strong>numero:</strong> representa o número da conta.</li>
+    </ul>
+
+    <div class="codigo_background">
+<pre>
+    <code class="codigo_cor_letra">
+    private String titular;
+    private double saldo;
+    private int numero;
+    
+    </code>
+    </pre>
+    </div>
+
+    <h3>Os Modificadores de acesso: </h3>
+    <p>Os modificadores de acesso determinam o nível de visibilidade dos atributos e métodos de uma classe. Os principais modificadores são:</p>
+    <ul>
+        <li><strong>private:</strong> o atributo ou método só pode ser acessado dentro da própria classe.</li>
+        <li><strong>protected:</strong> o atributo ou método só pode ser acessado dentro da própria classe e por subclasses.</li>
+        <li><strong>public:</strong> o atributo ou método pode ser acessado de qualquer lugar.</li>
+    </ul>
+    <p>No exemplo da classe Conta, os atributos são declarados como private para garantir o encapsulamento e proteger os dados da conta.</p>
+    <p>Desta forma, ao definir os atributos como private, apenas utilizando os métodos públicos (getters e setters) da classe que posso acessar essas variáveis.</p>
+
+    <p>O atributo pode pertencer a classe, precisamos definir como <strong>static</strong> o seu tipo de Retorno:</p>
+    <ul>
+        <li><strong>static:</strong> o atributo pertence à classe e não a instâncias individuais.</li>
+       
+    </ul>
+
+    <div class="codigo_background">
+        <pre>
+            <code class="codigo_cor_letra">
+        static int contador;  
+
+        Conta(int numero){
+        this.numero = numero;
+        Conta.contador++;
+     }
+            </code>
+        </pre>
+    </div>
+
+    <ul>
+        <li>Não importa quantos objetos sejam criados, o valor do atributo static é compartilhado entre todos os objetos da classe.</li>
+        <li>Ao criar os objetos, automaticamente será acrescentado essa variável.</li>
+    </ul>
+        <p>forma correta de acesso: </p>
+    <div class="codigo_background">
+        <pre>
+            <code>
+        Conta.contador++;
+            </code>
+        </pre>
+    </div>
+
+    <h3>Encapsulamento:</h3>
+    <p>É utilizado nos atributos com o modificador de acesso private, onde eles só podem ser acessados pelos métodos que vão recuperar. Jababen termo utilizado para os métodos sets e gets.</p>
+
+    <h3>A palavra chave "this":</h3>
+    <p>A palavra-chave "this" é usada para referenciar o objeto atual dentro de um método ou construtor. Ela permite acessar os atributos e métodos do objeto instanciado.</p>
+
+    <h3>O construtor da classe:</h3>
+    <ul>
+        <li>cada Classe possui um por padrão;</li>
+        <li>Não tem Retorno;</li>
+        <li>É chamado automaticamente quando um objeto é criado;</li>
+        <li>Inicializa os atributos do objeto.</li>
+
+    </ul>
+    <div class="codigo_background">
+        <pre>
+        <code class="codigo_cor_letra">
+        public Conta(String titular, int numero) {
+        this.titular = titular;
+        this.numero = numero;
+        this.saldo = 0.0;
+    }
+            </cod>
+        </pre>
+    </div>
+
+
 </body>
 </html>
